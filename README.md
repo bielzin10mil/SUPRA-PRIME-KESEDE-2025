@@ -185,28 +185,6 @@ Agradecemos a todos que contribuíram direta ou indiretamente para o desenvolvim
 - **Inspiração**: Projetos de e-commerce que serviram de base.
 - **Suporte**: Equipe de mentores e colegas que ofereceram feedback valioso.
 
-## Contato
-Para quaisquer dúvidas ou sugestões, entre em contato conosco:
-- **Lucas Yuji**: lucastamashirolyt@gmail.com
-- **Gustavo Pascoal**: gustavopascoal@gmail.com
-- **Gabriel Silveira**: gabrielsilveira@gmail.com
-
-## Licença
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## Contribuição
-
-### Como Contribuir
-1. **Fork este repositório**.
-2. **Crie uma branch** para sua feature (`git checkout -b feature/NovaFeature`).
-3. **Commit suas mudanças** (`git commit -m 'Adiciona nova feature'`).
-4. **Push para a branch** (`git push origin feature/NovaFeature`).
-5. **Abra um Pull Request**.
-
-### Regras de Contribuição
-- Mantenha o código limpo e bem documentado.
-- Siga as convenções de nomenclatura e estrutura existentes.
-- Teste suas mudanças antes de enviar.
 
 <h1 align="center">  Autores </h1>
 
