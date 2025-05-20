@@ -134,7 +134,7 @@ O projeto SupraPrime Academia é uma plataforma de e-commerce dedicada à venda 
   - CSS3
   - JavaScript
   - Bootstrap 4 para responsividade
-  - Font Awesome para ícones
+  - Font Awesome para ícones.
 - **Backend**:
   - PHP para lógica de servidor
 - **Banco de Dados**:
