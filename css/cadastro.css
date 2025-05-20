@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: radial-gradient(#fff, #ffd6d6); /* Cor de fundo do login */
+}
+
+.container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.container header {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: underline;
+}
+
+.container .form {
+  margin-top: 30px;
+}
+
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.input-box label {
+  color: #333;
+  cursor: pointer;
+}
+
+.form :where(.input-box input, .input-box select) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0 15px;
+  background: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+}
+
+.form ::placeholder {
+  color: #999;
+}
+
+.input-box input:focus, .input-box select:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.input-box input:hover, .input-box select:hover {
+  background: #f0f0f0;
+}
+
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.form .gender-box {
+  margin-top: 20px;
+}
+
+.gender-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+
+.form .gender {
+  column-gap: 5px;
+}
+
+.gender input {
+  accent-color: #252a34;
+}
+
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+
+.gender label {
+  color: #333;
+}
+
+.address :where(input, select) {
+  margin-top: 15px;
+}
+
+.select-box {
+  width: 100%; /* Garante que o contêiner select-box ocupe 100% da largura */
+}
+
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #333;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+}
+
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #252a34;
+}
+
+.form #submit {
+  background-image: linear-gradient(to right, rgb(0, 92, 197), rgb(90, 20, 220));
+  width: 100%;
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 2em;
+  border-radius: 10px;
+}
+
+.form #submit:hover {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1));
+}
+
+a:link {
+  text-decoration: none;
+  color: #333;
+}
+
+.form #regiao, #pais {
+  background: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+}
+
+.form input {
+  background: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+}
+
+/* Media queries para responsividade */
+
+/* Para telas menores que 728px */
+@media (max-width: 728px) {
+  .container {
+    padding: 20px;
+  }
+
+  .container header {
+    font-size: 1.2rem;
+  }
+
+  .form .input-box {
+    margin-top: 15px;
+  }
+
+  .form :where(.input-box input, .input-box select) {
+    height: 45px;
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  .form .column {
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  .form .gender-box h3 {
+    font-size: 0.9rem;
+  }
+
+  .form :where(.gender-option, .gender) {
+    column-gap: 30px;
+  }
+
+  .form button {
+    height: 50px;
+    font-size: 0.9rem;
+  }
+
+  .address .input-box {
+    width: 100%;
+  }
+}
+
+/* Para telas menores que 500px */
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+
+  .address .input-box {
+    width: 100%;
+  }
+}

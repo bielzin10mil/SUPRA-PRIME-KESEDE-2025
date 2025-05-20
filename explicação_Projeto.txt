@@ -1,0 +1,336 @@
+# SupraPrime Academia
+
+## Descrição do Projeto
+O projeto SupraPrime Academia é uma plataforma de e-commerce dedicada à venda de suplementos e equipamentos para fitness. A aplicação visa proporcionar uma experiência de compra fluida e intuitiva, permitindo que usuários naveguem, selecionem e adquiram produtos de forma eficiente e segura.
+
+### Objetivos
+- Facilitar a compra de suplementos e equipamentos de fitness.
+- Oferecer uma interface amigável e adaptada a diferentes dispositivos.
+- Gerenciar eficientemente o inventário e os usuários.
+- Garantir a segurança na autenticação e nas transações.
+
+## Funcionalidades
+- Autenticação: Login, registro e logout de usuários.
+- Gerenciamento de Produtos: Adicionar, editar, remover e listar produtos.
+- Gerenciamento de Usuários: Adicionar, editar, remover e listar usuários.
+- Carrinho de Compras: Adicionar, remover e atualizar produtos no carrinho.
+- Histórico de Compras: Visualizar o histórico de compras dos clientes.
+- Design Responsivo: Layout adaptado para diferentes dispositivos (desktop e mobile).
+
+## Tecnologias Utilizadas
+- Frontend:
+  - HTML5
+  - CSS3
+  - JavaScript
+  - Bootstrap 4 para responsividade
+  - Font Awesome para ícones
+- Backend:
+  - PHP para lógica de servidor
+- Banco de Dados:
+  - MySQL
+- Ferramentas:
+  - XAMPP para ambiente de desenvolvimento local
+
+## Estrutura do Projeto
+- index.php: Página principal exibindo produtos em destaque.
+- view/: Diretório contendo as páginas de visualização como produtos, sobre, cadastro e login.
+- backend/: Diretório com a lógica de backend, incluindo APIs e configuração do banco de dados.
+- css/: Arquivos de estilo CSS.
+- JS/: Scripts JavaScript para funcionalidades dinâmicas.
+
+## Como Executar o Projeto
+
+### Pré-requisitos
+- XAMPP ou outro servidor local com suporte a PHP e MySQL.
+- Navegador web atualizado.
+
+### Passos para Executar
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/seu-usuario/supra-prime-academia.git
+    ```
+2. Configure o banco de dados:
+    - Crie um banco de dados MySQL chamado `auth_app`.
+    - Importe o arquivo `auth_app.sql` localizado na pasta `backend/database` para criar as tabelas necessárias.
+3. Configure o servidor local:
+    - Coloque os arquivos do projeto na pasta `htdocs` do XAMPP.
+    - Inicie o servidor Apache e MySQL pelo painel de controle do XAMPP.
+4. Acesse o projeto:
+    - Abra o navegador e acesse `http://localhost/supra-prime-academia`.
+
+### Passos para Executar Ngrok
+1. Iniciar o Ngrok:
+    - No terminal, navegue até a pasta onde você extraiu o ngrok.
+    - Execute o comando para expor o servidor local na porta correta. Se o Apache estiver rodando na porta 80, use:
+      ```sh
+      ngrok http 80
+      ```
+2. Configure o banco de dados:
+    - O ngrok fornecerá um URL público (algo como `http://abcd1234.ngrok.io`). Este URL será usado para acessar o seu servidor local pela internet.
+3. Testar a Conexão:
+    - Acesse o URL público fornecido pelo ngrok no seu navegador e verifique se o seu projeto está funcionando corretamente.
+    - Certifique-se de que todas as funcionalidades (login, registro, carrinho de compras, etc.) estão funcionando como esperado.
+
+## Agradecimentos
+Agradecemos a todos que contribuíram direta ou indiretamente para o desenvolvimento deste projeto:
+- Inspiração: Projetos de e-commerce que serviram de base.
+- Suporte: Equipe de mentores e colegas que ofereceram feedback valioso.
+
+## Contato
+Para quaisquer dúvidas ou sugestões, entre em contato conosco:
+- Lucas Yuji: lucastamashirolyt@gmail.com
+- Gustavo Pascoal: gustavopascoal@gmail.com
+- Gabriel Silveira: gabrielsilveira@gmail.com
+
+## Licença
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Contribuição
+
+### Como Contribuir
+1. Fork este repositório.
+2. Crie uma branch para sua feature (`git checkout -b feature/NovaFeature`).
+3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`).
+4. Push para a branch (`git push origin feature/NovaFeature`).
+5. Abra um Pull Request.
+
+### Regras de Contribuição
+- Mantenha o código limpo e bem documentado.
+- Siga as convenções de nomenclatura e estrutura existentes.
+- Teste suas mudanças antes de enviar.
+
+## Explicação dos Arquivos e Funções
+
+### Arquivo: `backend/api/config.php`
+- **Função**: Configura a conexão com o banco de dados MySQL.
+- **Detalhes**:
+  - Habilita a exibição de erros para depuração.
+  - Define as credenciais do banco de dados.
+  - Cria a conexão com o banco de dados e verifica se a conexão foi bem-sucedida.
+
+### Arquivo: `backend/api/loginAPI.php`
+- **Função**: Processa o login dos usuários.
+- **Detalhes**:
+  - Recebe os dados do formulário via POST.
+  - Verifica se os campos estão preenchidos.
+  - Filtra e valida o email.
+  - Prepara a consulta para evitar injeção de SQL.
+  - Verifica se o usuário existe e se a senha está correta.
+  - Inicia a sessão do usuário e define variáveis de sessão.
+
+### Arquivo: `backend/api/register.php`
+- **Função**: Processa o registro de novos usuários.
+- **Detalhes**:
+  - Recebe dados JSON do frontend.
+  - Valida os dados recebidos.
+  - Verifica se o usuário já existe.
+  - Insere um novo usuário no banco de dados com a senha criptografada.
+
+### Arquivo: `backend/api/logout.php`
+- **Função**: Processa o logout dos usuários.
+- **Detalhes**:
+  - Destroi todas as variáveis de sessão.
+  - Destroi a sessão.
+  - Redireciona para a página de login.
+
+### Arquivo: `view/cadastro.php`
+- **Função**: Página de registro de novos usuários.
+- **Detalhes**:
+  - Contém um formulário para coletar os dados do usuário.
+  - Envia os dados para o backend para processamento.
+
+### Arquivo: `view/login.php`
+- **Função**: Página de login dos usuários.
+- **Detalhes**:
+  - Contém um formulário para coletar as credenciais do usuário.
+  - Envia os dados para o backend para processamento.
+
+### Arquivo: `view/dashboard.php`
+- **Função**: Painel de controle do usuário.
+- **Detalhes**:
+  - Exibe informações do usuário.
+  - Exibe links para gerenciar produtos e usuários (se o usuário for admin).
+
+### Arquivo: `view/admin.php`
+- **Função**: Página de administração para gerenciar produtos.
+- **Detalhes**:
+  - Contém formulários para adicionar, editar e remover produtos.
+  - Lista todos os produtos cadastrados.
+
+### Arquivo: `view/user_management.php`
+- **Função**: Página de administração para gerenciar usuários.
+- **Detalhes**:
+  - Lista todos os usuários cadastrados.
+  - Permite editar ou remover usuários.
+
+### Arquivo: `view/registro_clientes.php`
+- **Função**: Página de administração para visualizar o histórico de compras dos clientes.
+- **Detalhes**:
+  - Lista todas as compras realizadas pelos clientes.
+
+### Arquivo: `view/produtos.php`
+- **Função**: Página de visualização dos produtos.
+- **Detalhes**:
+  - Lista todos os produtos disponíveis para compra.
+  - Permite adicionar produtos ao carrinho.
+
+### Arquivo: `view/sobre.php`
+- **Função**: Página sobre a empresa.
+- **Detalhes**:
+  - Contém informações sobre a missão, valores e equipe da empresa.
+
+### Arquivo: `JS/script.js`
+- **Função**: Contém funções JavaScript para manipulação do carrinho, exibição de alertas, autenticação, e gerenciamento de produtos e usuários.
+- **Detalhes**:
+  - **Função `adicionarAoCarrinho(id)`**: Adiciona um produto ao carrinho.
+    - Verifica se o produto já está no carrinho.
+    - Adiciona o produto ao carrinho e atualiza a exibição.
+  - **Função `atualizarCarrinho()`**: Atualiza a exibição do carrinho na sidebar.
+    - Atualiza a lista de produtos no carrinho.
+    - Atualiza o contador de itens no carrinho.
+    - Salva o carrinho no localStorage.
+  - **Função `removerDoCarrinho(id)`**: Remove um produto do carrinho.
+    - Remove o produto do carrinho e atualiza a exibição.
+  - **Função `toggleCart()`**: Alterna a visibilidade do carrinho na sidebar.
+    - Mostra ou esconde a sidebar do carrinho.
+  - **Função `checkout()`**: Finaliza a compra e registra no backend.
+    - Verifica se o carrinho está vazio.
+    - Envia os dados do carrinho para o backend para registrar a compra.
+  - **Função `verificarAutenticacao()`**: Alterna a visibilidade dos links de login/cadastro e perfil/logout com base no estado de autenticação do usuário.
+    - Verifica se o usuário está logado.
+    - Atualiza a visibilidade dos links de acordo com o estado de autenticação.
+  - **Função `mostrarAlerta(mensagem, tipo)`**: Exibe alertas na página.
+    - Exibe uma mensagem de alerta na página.
+  - **Função `obterAlerta()`**: Obtém o elemento de alerta na página.
+    - Retorna o elemento de alerta.
+
+### Arquivo: `css/style.css`
+- **Função**: Contém os estilos gerais do site.
+- **Detalhes**:
+  - Define a aparência e o layout das páginas.
+
+### Arquivo: `css/dashboard.css`
+- **Função**: Contém os estilos específicos para o dashboard do usuário.
+
+### Arquivo: `css/cadastro.css`
+- **Função**: Contém os estilos específicos para a página de cadastro.
+
+### Arquivo: `css/login.css`
+- **Função**: Contém os estilos específicos para a página de login.
+
+### Arquivo: `index.php`
+- **Função**: Página inicial do site.
+- **Detalhes**:
+  - Exibe produtos em promoção.
+  - Contém links para outras páginas do site.
+
+### Arquivo: `README.md`
+- **Função**: Contém informações sobre o projeto.
+- **Detalhes**:
+  - Inclui descrição, funcionalidades, tecnologias utilizadas, estrutura do projeto, como executar, agradecimentos, contato, licença e como contribuir.
+
+### Arquivo: `JS/script.js`
+
+- **Função `menutoggle()`**: Alterna a exibição do menu de navegação responsivo.
+  - **Detalhes**:
+    - Modifica a propriedade `maxHeight` do elemento do menu para mostrar ou esconder os itens.
+    - Utilizada em dispositivos móveis para facilitar a navegação.
+
+- **Função `criarProduto(dados)`**: Envia uma solicitação para criar um novo produto no backend.
+  - **Detalhes**:
+    - Utiliza `fetch` para enviar uma requisição POST com os dados do produto.
+    - Processa a resposta JSON para verificar o sucesso da operação.
+    - Exibe alertas de sucesso ou erro ao usuário.
+    - Atualiza a lista de produtos na interface após a criação.
+
+- **Função `editarUsuario(id)`**: Permite a edição das informações de um usuário existente.
+  - **Detalhes**:
+    - Recupera os dados do usuário com o ID fornecido.
+    - Preenche o formulário de edição com os dados atuais do usuário.
+    - Envia as alterações para o backend para atualizar as informações no banco de dados.
+    - Atualiza a lista de usuários na interface após a edição.
+
+- **Função `excluirUsuario(id)`**: Remove um usuário do sistema.
+  - **Detalhes**:
+    - Envia uma solicitação DELETE para o backend com o ID do usuário.
+    - Remove o usuário da lista exibida na interface.
+    - Exibe um alerta confirmando a remoção.
+
+- **Função `isLoggedIn()`**: Verifica se o usuário está autenticado.
+  - **Detalhes**:
+    - Retorna um valor booleano baseado no estado da sessão do usuário.
+    - Utilizada para controlar a visibilidade de elementos na interface conforme a autenticação.
+
+- **Função `atualizarListaProdutos()`**: Atualiza a lista de produtos exibidos na interface.
+  - **Detalhes**:
+    - Faz uma requisição ao backend para obter a lista atualizada de produtos.
+    - Renderiza os produtos na página principal ou no dashboard administrativo.
+    - Garante que a interface reflita o estado atual do banco de dados.
+
+- **Função `deletarProdutosSelecionados()`**: Deleta múltiplos produtos selecionados pelo administrador.
+  - **Detalhes**:
+    - Coleta os IDs dos produtos selecionados na interface.
+    - Envia uma requisição ao backend para deletar esses produtos.
+    - Remove os produtos deletados da lista exibida na interface.
+    - Exibe alertas de sucesso ou erro conforme a resposta do backend.
+
+- **Função `removerProduto(id)`**: Remove um produto específico do sistema.
+  - **Detalhes**:
+    - Envia uma requisição DELETE para o backend com o ID do produto.
+    - Remove o produto da lista exibida na interface.
+    - Atualiza o contador de produtos e exibe uma confirmação ao usuário.
+
+- **Função `editarProduto(id)`**: Permite a edição das informações de um produto.
+  - **Detalhes**:
+    - Recupera os dados do produto com o ID especificado.
+    - Preenche o formulário de edição com os dados atuais do produto.
+    - Envia as alterações para o backend para atualizar as informações no banco de dados.
+    - Atualiza a lista de produtos na interface após a edição.
+
+- **Função `toggleCart()`**: Alterna a visibilidade da sidebar do carrinho de compras.
+  - **Detalhes**:
+    - Verifica o estado atual da sidebar (visível ou escondida).
+    - Altera a propriedade de estilo para mostrar ou esconder a sidebar.
+    - Utilizada para melhorar a experiência do usuário na navegação do carrinho.
+
+- **Função `checkout()`**: Finaliza a compra dos produtos no carrinho.
+  - **Detalhes**:
+    - Valida se o carrinho possui itens antes de proceder.
+    - Envia os dados do carrinho para o backend para processar a transação.
+    - Limpa o carrinho e atualiza a interface para refletir a compra realizada.
+    - Exibe uma mensagem de confirmação ao usuário.
+
+- **Função `verificarAutenticacao()`**: Atualiza a interface com base no estado de autenticação do usuário.
+  - **Detalhes**:
+    - Verifica se há uma sessão de usuário ativa.
+    - Exibe ou esconde links de login/cadastro ou perfil/logout conforme necessário.
+    - Utilizada para garantir que funcionalidades restritas sejam acessíveis apenas por usuários autenticados.
+
+- **Função `mostrarAlerta(mensagem, tipo, formId = null)`**: Exibe uma mensagem de alerta na interface.
+  - **Detalhes**:
+    - Cria e estiliza um elemento de alerta com a mensagem e o tipo especificado (ex: sucesso, erro).
+    - Insere o alerta na localização correta da página ou formulário.
+    - Facilita a comunicação de feedback ao usuário sobre suas ações.
+
+- **Função `obterAlerta()`**: Retorna o elemento de alerta existente na página.
+  - **Detalhes**:
+    - Recupera o elemento DOM responsável pela exibição de mensagens de alerta.
+    - Utilizada pelas funções de alerta para atualizar ou ocultar mensagens conforme necessário.
+
+- **Função `adicionarAoCarrinho(id)`**: Adiciona um produto ao carrinho de compras.
+  - **Detalhes**:
+    - Verifica se o produto já está presente no carrinho.
+    - Se existir, incrementa a quantidade; caso contrário, adiciona o produto com quantidade 1.
+    - Atualiza a exibição do carrinho para refletir as mudanças.
+    - Salva o estado atualizado do carrinho no `localStorage` para persistência.
+
+- **Função `obterAlerta()`**: Obtém o elemento de alerta na página para manipulação.
+  - **Detalhes**:
+    - Retorna o elemento DOM destinado a exibir mensagens de alerta.
+    - Utilizada pelas funções de exibição e ocultação de alertas para facilitar a comunicação com o usuário.
+
+- **Função `mostrarAlerta(mensagem, tipo, formId = null)`**: Exibe uma mensagem de alerta na interface.
+  - **Detalhes**:
+    - Cria uma mensagem de alerta com a classe correspondente ao tipo especificado.
+    - Insere o alerta no local apropriado da página ou formulário.
+    - Facilita a retroalimentação ao usuário sobre operações realizadas, como sucesso ou erro.
